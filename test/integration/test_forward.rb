@@ -624,6 +624,7 @@ class TestForwardOnUnixSockets < ForwardTestBase
             begin
               client = UNIXSocket.new(local_socket.path)
               client_data = client.recv(1024)
+              puts "---- client_data: #{client_data}"
               client.close
               sleep(0.2)
             ensure
