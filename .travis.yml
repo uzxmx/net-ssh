@@ -47,7 +47,7 @@ install:
 
 script:
   - ssh -V
-  - bundle _1.17_ exec rake test
-  - BUNDLE_GEMFILE=./Gemfile.noed25519 bundle _1.17_ exec rake test
-  - bundle _1.17_ exec rake test_test
-  - bundle _1.17_ exec rubocop
+  - bundle _1.17_ exec rake test TEST=test//integration/test_forward.rb TESTOPTS="--name=test_forward_local_unix_socket_to_remote_port -v"
+  # - BUNDLE_GEMFILE=./Gemfile.noed25519 bundle _1.17_ exec rake test
+  # - bundle _1.17_ exec rake test_test
+  # - bundle _1.17_ exec rubocop
